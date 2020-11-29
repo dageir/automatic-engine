@@ -8,7 +8,7 @@ $skill = $_POST['skill'];
 
 include('connection.php');
 
-if((empty($demand)) and (empty($vacancy_name)) and (empty($responsibilitys)) and (empty($work_condition)) and (empty($skill)))
+if((empty($demand)) or (empty($vacancy_name)) or (empty($responsibilitys)) or (empty($work_condition)) or (empty($skill)))
 {
     $_SESSION['message_1'] = 'Заполните все поля!';
     header('Location: ../pages/Staff_recruitment.php');

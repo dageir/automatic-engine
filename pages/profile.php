@@ -24,7 +24,7 @@ include('header.php');
 <div class="container" style="margin-top: 10px ">
     <div class="row">
         <div class="col-4">
-            <img src="<?php echo '../'.$_SESSION['user']['avatar']; ?>" class="img-thumbnail"  alt="...">
+            <!--<img src="<?php /*echo '../'.$_SESSION['user']['avatar']; */?>" class="img-thumbnail"  alt="...">-->
         </div>
         <div class="col-8">
 

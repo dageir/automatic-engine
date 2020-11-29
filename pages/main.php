@@ -67,17 +67,21 @@ include('header.php');
 
 <main class="container">
     <br>
-    <div class="p-4 p-md-5 mb-4 text-black rounded bg-light">
+    <div class="p-4 p-md-5 mb-4 text-black rounded alert-secondary">
         <div class="col-md-6 px-0">
             <h1 class="display-4 font-italic"><b>Статистика</b></h1>
             <div class="container">
                 <div class="row">
                     <div class="col">
                         <p class="lead my-3">Кол-во созданных вакансий:
-                           <!-- <?php
-/*                            $count_2 = query($connection, "SELECT COUNT(*) as count FROM vacancy");
-                            echo $count_2;
-                            */?></p>-->
+                            <?php
+                            $i = 0;
+                            $count_2 = mysqli_query($connection, "SELECT id FROM `vacancy`");
+                            While($con = mysqli_fetch_assoc($count_2)){
+                                $i++;
+                            }
+                            echo $i;
+                            ?>
                     </div>
                     <div class="col">
 
@@ -85,28 +89,27 @@ include('header.php');
                 </div>
                 <div class="row">
                     <div class="col">
-                        <p class="lead my-3">Кол-во просмотров вакансий: <?php ?></p>
+                        <p class="lead my-3">Кол-во принятых резюме: <?php
+                            $b = 0;
+                            $count_3 = mysqli_query($connection, "SELECT id FROM `applicant`");
+                            While($con = mysqli_fetch_assoc($count_3)){
+                                $b++;
+                            }
+                            echo $b;
+                            ?> <?php ?></p>
                     </div>
                     <div class="col">
 
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <p class="lead my-3">Кол-во отправленный резюме: <?php ?></p>
-                    </div>
-                    <div class="col">
 
-                    </div>
-                </div>
-                <button type="button" class="btn btn-primary">Подробнее</button>
         </div>
         </div>
     </div>
 
-    <div class="row ">
-        <div class="col-md-6">
-            <a href="recruitment.php" style="text-decoration:none; color: #000 !important;"><div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+    <div class="row" >
+        <div class="col-md-6" style="text-align: center">
+            <a href="selection.php" style="text-decoration:none; color: #000 !important;"><div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col p-4 d-flex flex-column position-static">
                     <strong class="d-inline-block mb-2 text-primary"></strong>
                     <h3 class="mb-0">Подбор персонала</h3>
@@ -117,7 +120,7 @@ include('header.php');
 
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" style="text-align: center">
             <a href="vacations.php" style="text-decoration:none; color: #000 !important;"><div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col p-4 d-flex flex-column position-static">
                     <strong class="d-inline-block mb-2 text-primary"></strong>
@@ -127,22 +130,27 @@ include('header.php');
                 </div></a>
 
         </div>
-    </div>
-        <div class="col-md-6">
+    </div>  </div>
+
+
+
+            <div style="text-align: center">
             <a href="test_main.php" style="text-decoration:none; color: #000 !important;"><div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div class="col p-4 d-flex flex-column position-static">
                         <strong class="d-inline-block mb-2 text-primary"></strong>
                         <h3 class="mb-0">Тестирование</h3>
                         <div class="mb-1 text-muted"></div>
                         <p class="card-text mb-auto"></p>
-                    </div></a   >
-
-        </div>
-    </div>
+                    </div>         </div></a>
+            </div>
 
 
 
-    </div>
+
+
+
+
+
 
 
 

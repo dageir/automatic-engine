@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include('../phpScripts/connection.php');
 if (!$_SESSION['user']) {
     header('Location: ../index.php');
 }
@@ -23,66 +23,51 @@ include('header.php');
 ?>
 <br><br>
 <div class="container-lg">
-    <h1>Карточка соискателя </h1>
+    <h1>Карточка соискателя  <a href="selection.php" class="btn btn-primary">Назад</a></h1>
     <hr>
     <div class="row">
-        <div class="col">
-            <h4>Отклик по вакансии: <?php  ?></h4>
-            <br>
-            <h4>Отправить тест: <button type="submit" class="btn btn-primary">Отправить</button> <?php  ?></h4>
-            <br>
-            <h4>Посмотреть результаты тестирования: <button type="submit" class="btn btn-primary">Посмотреть</button></h4>
 
 
-        </div>
-        <div class="col">
-            <div class="col-md-6">
-                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <strong class="d-inline-block mb-2 text-primary"></strong>
-                        <h3 class="mb-0">Резюме</h3>
-                        <h5 class="mb-0">Трудолюбивый оптимист со знанием php!</h5>
-                        <div class="mb-1 text-muted"></div>
-                        <p class="card-text mb-auto"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
         <?php
+$string = mysqli_query($connection, "SELECT `id` FROM `applicant` WHERE `id` = ". (int) $_GET['id']);
 
+    While($cat = mysqli_fetch_assoc($string)){
+     echo $cat['applicant_name'];
+    }
 
+?>
+        <div class="col">
+            <h4>Отклик по вакансии: Junior программист<?php  ?></h4>
+            <br>
+            <h4>Посмотреть результат тестирования <?php  ?> <a href="#" class="btn btn-primary">Открыть</a></h4>
+            <br>
+        </div>
+        <div class="col-md-6">
+            <a href="selection.php" style="text-decoration:none; color: #000 !important;"><div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary"></strong>
+                        <h4 class="mb-0">Резюме</h4>
+                            <ul>Умения:
+                            <li>Опыт работы с библиотекой Pandas Python</li>
+                                <li> Знание английского языка</li>
 
-        /* // подключаем загрузчик
-    include '../vendor/autoload.php';
+                            </ul>
+                           <ul> Ключевые навыки:
 
-    // Создаем объект для парсинга PDF
-    $parser = new \Smalot\PdfParser\Parser();
+                               <li> Уверенность в себе</li>
+                            </ul>
 
+                        <div class="mb-1 text-muted"></div>
+                        <p class="card-text mb-auto"></p>
 
-    // парсим PDF файл
-    $pdf = $parser->parseFile('../uploads/src/123.pdf');
+                    </div></a>
 
-    // выводим текст из файла
-    print $pdf -> getText();
-    echo $pdf -> getText();
-
-        include('../phpScripts/class.pdf2text.php');
-        $a = new PDF2Text();
-        $a->setFilename('Videographer_RFP.pdf'); //grab the test file at http://www.newyorklivearts.org/Videographer_RFP.pdf
-        $a->decodePDF();
-        echo $a->output();*/
-    ?>
-
-
-
-
-
-
+        </div>
     </div>
 
+</div>
 
 <!-- JavaScript Bundle with Popper.js -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-popRpmFF9JQgExhfw5tZT4I9/CI5e2QcuUZPOVXb1m7qUmeR2b50u+YFEYe1wgzy" crossorigin="anonymous"></script>

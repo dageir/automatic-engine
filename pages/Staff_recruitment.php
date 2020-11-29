@@ -20,7 +20,7 @@ include('header.php');
 ?>
 <div class="container-lg">
     <br>
-    <div><h1>Создание вакансии <a href="main.php">Вернуться назад</a></h1>   </div>
+    <div><h1>Создание вакансии <a href="vacations.php" class="btn btn-primary">Назад</a></h1>   </div>
     <hr><br>
     <form method="post" action="../phpScripts/create_vacancies.php">
     <div class="row">
@@ -39,14 +39,14 @@ include('header.php');
     </div>
     <br>
 
-        <h2>Требования <a href="crt.php" name="Button" type="" class="btn btn-primary">Добавить</a></h2>
+        <h2>Требования <a href="crt.php" name="Button" type="" class="btn btn-primary">Редактировать</a></h2>
         <?php
         $categories = mysqli_query($connection, "SELECT * FROM `demand`");
-        $categ_ar = array();
+
 
         While($cat = mysqli_fetch_assoc($categories))
         {
-            $categ_ar[] = $cat;
+
             echo  '<div class="form-check">
                           <input type="checkbox" value="'. $cat['id'] .'" name="demand[]" class="form-check-input">'
                 .$cat['demands'] . '
@@ -61,7 +61,7 @@ include('header.php');
 
     <br><br>
 
-        <h2>Обязанности <a href="crt.php" name="Button" type="button" class="btn btn-primary">Добавить</a></h2>
+        <h2>Обязанности <a href="crt.php" name="Button" type="button" class="btn btn-primary">Редактировать</a></h2>
         <?php
         $categories = mysqli_query($connection, "SELECT * FROM `responsibility`");
         $categ_ar = array();
@@ -80,7 +80,7 @@ include('header.php');
 
     <br><br>
 
-        <h2>Условия работы <a href="crt.php" name="Button" type="button" class="btn btn-primary">Добавить</a></h2>
+        <h2>Условия работы <a href="crt.php" name="Button" type="button" class="btn btn-primary">Редактировать</a></h2>
         <?php
         $categories = mysqli_query($connection, "SELECT * FROM `conditions`");
         $categ_ar = array();
@@ -99,7 +99,7 @@ include('header.php');
 
     <br><br>
 
-        <h2>Ключевые навыки <a href="crt.php" name="Button" type="button" class="btn btn-primary">Добавить</a></h2>
+        <h2>Ключевые навыки <a href="crt.php" name="Button" type="button" class="btn btn-primary">Редактировать</a></h2>
         <?php
         $categories = mysqli_query($connection, "SELECT * FROM `key_skill`");
         $categ_ar = array();

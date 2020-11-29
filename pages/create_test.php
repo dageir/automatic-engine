@@ -21,7 +21,7 @@ include('header.php');
 <div class="container-lg">
 
 
-                                    <h1>Редактор тестов </h1>
+                                    <h1>Редактор тестов  <a href="test_main.php" class="btn btn-primary">Назад</a></h1></h1>
                                     <hr><br>
 
                                     <section class="row" style="margin-top: 10px">

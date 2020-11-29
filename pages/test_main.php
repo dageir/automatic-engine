@@ -20,7 +20,7 @@ include('header.php');
 ?>
 <div class="container-lg">
     <br>
-    <h1>Редактор тестов</h1>
+    <h1>Редактор тестов  <a href="/" class="btn btn-primary">Назад</a></h1>
     <hr><br><br>
     <div class="row ">
         <div class="col-md-6">
@@ -65,83 +65,10 @@ include('header.php');
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- JavaScript Bundle with Popper.js -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-popRpmFF9JQgExhfw5tZT4I9/CI5e2QcuUZPOVXb1m7qUmeR2b50u+YFEYe1wgzy" crossorigin="anonymous"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -19,7 +19,7 @@ include('../phpScripts/connection.php');
     include('header.php');
     ?>
     <div class="container-lg">
-        <h1>Список вакансий         <a href="Staff_recruitment.php"><button type="button" class="btn btn-primary">Создать вакансию</button></a></h1>
+        <h1>Список вакансий         <a href="Staff_recruitment.php"><button type="button" class="btn btn-primary">Создать вакансию</button></a> <a href="/" class="btn btn-primary">Назад</a></h1>
         <hr><br>
         <div class="row mb-2">
             <div class="col-md-6">
@@ -27,7 +27,7 @@ include('../phpScripts/connection.php');
                 $categories = mysqli_query($connection, "SELECT * FROM `vacancy`");
                 While($cat = mysqli_fetch_assoc($categories))
                 {
-                    $cat_arr = $cat;
+
                     echo  '
                             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                             <div class="col p-4 d-flex flex-column position-static">
@@ -37,7 +37,7 @@ include('../phpScripts/connection.php');
                             <br>
                              <div class="row">
                             <div class="col-sm">
-                              <p class="card-text mb-auto">Подробнее... </p>
+                              <p class="card-text mb-auto"></p>
                             </div>
                             <div class="col-sm"> 
                             </div>
@@ -49,7 +49,16 @@ include('../phpScripts/connection.php');
                             </div>
                         </div><br>';
                 }
-                ?>
+
+            if ($_SESSION['message_delete']) {
+                echo '<br><div class="alert alert-warning alert-dismissible fade show" role="alert">
+                              <strong></strong>' . $_SESSION['message_delete'] . '
+                              <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                            </div>';
+            }
+            unset($_SESSION['message_delete']);
+
+            ?>
             </div>
 
         </div>

@@ -19,7 +19,7 @@ include('../phpScripts/connection.php');
     include('header.php');
     ?>
     <div class="container-lg">
-        <h1>Редактор элементов <a href="javascript:history.back()">Вернуться назад</a></h1>
+        <h1>Редактор элементов <a href="Staff_recruitment.php" class="btn btn-primary">Назад</a></h1>
         <hr><br>
 
         <section class="row" style="margin-top: 10px">
@@ -32,7 +32,7 @@ include('../phpScripts/connection.php');
                     </div>
 
                     <button type="submit" name="demand_S"  class="btn btn-primary">Добавить</button>
-                </form>
+                </form><br>
                 <?php
                 if ($_SESSION['message_1'])
                 {
@@ -104,11 +104,11 @@ include('../phpScripts/connection.php');
             </div>
 
             <div class="col">
-                <h2>Удаление требования</h2>
-                <form action="../phpScripts/delete_dm_script.php" method="post">
+                    <h2>Удаление требования</h2>
+                    <form action="../phpScripts/delete_dm_script.php"" method="post">
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Выберите требование</label>
-                        <select class="form-select" aria-label=".form-select-lg example">
+                        <select class="form-select" aria-label=".form-select-lg example" name="select">
                             <?php
                             $categories = mysqli_query($connection, "SELECT * FROM `demand`");
                             While($cat = mysqli_fetch_assoc($categories))
@@ -126,14 +126,22 @@ include('../phpScripts/connection.php');
 
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Удалить</button>
+                    <button type="submit" class="btn btn-primary">Удалить</button><br>
+               <?php if ($_SESSION['message_delete_1'])
+                {
+                echo '<br><div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong></strong>' . $_SESSION['message_delete_1'] .'
+                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                </div>';
+                }
+                unset($_SESSION['message_delete_1']);?>
                 </form>
                 <br>
                 <h2>Удаление обязанности</h2>
                 <form action="../phpScripts/delete_dm_script.php" method="post">
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Выберите обязанность</label>
-                        <select class="form-select" aria-label=".form-select-lg example">
+                        <select class="form-select" aria-label=".form-select-lg example" name="select-2">
                             <?php
                             $categories = mysqli_query($connection, "SELECT * FROM `responsibility`");
                             While($cat = mysqli_fetch_assoc($categories))
@@ -152,13 +160,21 @@ include('../phpScripts/connection.php');
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Удалить</button>
+                    <?php if ($_SESSION['message_delete_2'])
+                    {
+                        echo '<br><div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong></strong>' . $_SESSION['message_delete_2'] .'
+                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                </div>';
+                    }
+                    unset($_SESSION['message_delete_2']);?>
                 </form>
                 <br>
                 <h2>Удаление условия работы</h2>
                 <form action="../phpScripts/delete_dm_script.php" method="post">
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Выберите условие работы</label>
-                        <select class="form-select" aria-label=".form-select-lg example">
+                        <select class="form-select" aria-label=".form-select-lg example" name="select-3">
                             <?php
                             $categories = mysqli_query($connection, "SELECT * FROM `conditions`");
                             While($cat = mysqli_fetch_assoc($categories))
@@ -176,14 +192,22 @@ include('../phpScripts/connection.php');
 
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Удалить</button>
+                    <button type="submit" class="btn btn-primary">Удалить</button><br>
+                    <?php if ($_SESSION['message_delete_3'])
+                    {
+                        echo '<br><div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong></strong>' . $_SESSION['message_delete_3'] .'
+                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                </div>';
+                    }
+                    unset($_SESSION['message_delete_3']);?>
                 </form>
                 <br>
                 <h2>Удаление ключевого навыка</h2>
                 <form action="../phpScripts/delete_dm_script.php" method="post">
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Выберите ключевой навык</label>
-                        <select class="form-select" aria-label=".form-select-lg example">
+                        <select class="form-select" aria-label=".form-select-lg example" name="select-4">
                             <?php
                             $categories = mysqli_query($connection, "SELECT * FROM `key_skill`");
                             While($cat = mysqli_fetch_assoc($categories))
@@ -201,7 +225,15 @@ include('../phpScripts/connection.php');
 
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Удалить</button>
+                    <button type="submit" class="btn btn-primary">Удалить</button><br>
+                    <?php if ($_SESSION['message_delete_4'])
+                    {
+                        echo '<br><div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong></strong>' . $_SESSION['message_delete_4'] .'
+                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                </div>';
+                    }
+                    unset($_SESSION['message_delete_4']);?>
                 </form>
             </div>
 

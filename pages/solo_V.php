@@ -2,6 +2,7 @@
 session_start();
 unset($_SESSION['create']);
 include('../phpScripts/connection.php');
+$categories = mysqli_query($connection, "SELECT * FROM `vacancy`");
 ?>
     <!doctype html>
     <html lang="en">
@@ -17,61 +18,83 @@ include('../phpScripts/connection.php');
 <body>
 <?php
 include('header.php');
-include('../phpScripts/connection.php');
+?>
+
+
+<div class="container-lg">
+<?php
 $vac = mysqli_query($connection, "SELECT * FROM `vacancy` WHERE `id` = ". (int) $_GET['id']);
+while($art = mysqli_fetch_assoc($vac)){
+?>
+<h1><?php echo $art['vacancy_name']; ?> </h1>
+<hr>
+
+<?php
+
+
 $string = mysqli_query($connection, "SELECT `demand_id` FROM `vacancy` WHERE `id` = ". (int) $_GET['id']);
 
 $myrow = mysqli_fetch_array ($string);
 
 $arr = explode(" ", $myrow['demand_id']);
-print_r($arr);
 $N = count($arr);
-
-if(mysqli_num_rows($vac) <= 0)
-{
-    echo '<h3>Не найдено!</h3>';
-
-}else{
-    for($i=0; $i < $N; $i++)
-        {
-            $k = mysqli_query($connection, "SELECT `demands` FROM `demand` WHERE `id` = ". $arr[i]);
-            $row= mysqli_fetch_array($k);
-            $demands = $row['demands'];
-            $row= mysqli_fetch_array($demands); // fetch the array
-            $demands1 = $row['demands'];
-            echo $demands1;
-        }
-
-
-
-
-
-
+        echo '<h2>Требования: </h2><br>';
+for ($i = 0; $i < $N; $i++) {
+    $vr = $arr[$i];
+    $string1 = mysqli_query($connection, "SELECT demands FROM demand WHERE id = '$vr'");
+    While($cat = mysqli_fetch_assoc($string1)){
+     echo '<ul><li>' . $cat['demands'] . '</li></ul>';
+    }
 }
 
+$string = mysqli_query($connection, "SELECT `responsibility_id` FROM `vacancy` WHERE `id` = ". (int) $_GET['id']);
 
-?>
+$myrow = mysqli_fetch_array ($string);
 
+$arr2 = explode(" ", $myrow['responsibility_id']);
+$N = count($arr2);
+        echo '<h2>Обязанности: </h2><br>';
+for ($i = 0; $i < $N; $i++) {
+    $vr = $arr2[$i];
+    $string1 = mysqli_query($connection, "SELECT responsibilitys FROM responsibility WHERE id = '$vr'");
+    While($cat = mysqli_fetch_assoc($string1)){
+     echo '<ul><li>' . $cat['responsibilitys'] . '</li></ul>';
+    }
+}
 
+$string = mysqli_query($connection, "SELECT `conditions_id` FROM `vacancy` WHERE `id` = ". (int) $_GET['id']);
 
+$myrow = mysqli_fetch_array ($string);
 
-
-
-
-
-<!--<div class="container-lg">
-    <h1><?php /*echo $vac_Z['vacancy_name'] */?></h1>
-    <hr>
-    <h3>Требования:</h3><br>
-    <h4><?php /*While($vac_Z= mysqli_fetch_assoc($vac))
-        {
-        echo  '<ul class="list-group list-group-flush">
-                    <li class="list-group-item">' . $vac_Z['demand_id'] . ' </li>
-               </ul>';
+$arr3 = explode(" ", $myrow['conditions_id']);
+$N = count($arr3);
+    echo '<h2>Условия работы: </h2><br>';
+    for ($i = 0; $i < $N; $i++) {
+        $vr = $arr3[$i];
+        $string1 = mysqli_query($connection, "SELECT work_condition FROM conditions WHERE id = '$vr'");
+        While($cat = mysqli_fetch_assoc($string1)){
+            echo '<ul><li>' . $cat['work_condition'] . '</li></ul>';
         }
-        */?>
-        </h4>
--->
+    }
+
+$string = mysqli_query($connection, "SELECT `key_skill_id` FROM `vacancy` WHERE `id` = ". (int) $_GET['id']);
+
+$myrow = mysqli_fetch_array ($string);
+
+$arr4 = explode(" ", $myrow['key_skill_id']);
+$N = count($arr4);
+    echo '<h2>Ключевые навыки: </h2><br>';
+    for ($i = 0; $i < $N; $i++) {
+        $vr = $arr4[$i];
+        $string1 = mysqli_query($connection, "SELECT skill FROM key_skill WHERE id = '$vr'");
+        While($cat = mysqli_fetch_assoc($string1)){
+            echo '<ul><li>' . $cat['skill'] . '</li></ul>';
+        }
+    }
+}?><br><hr>
+    <a href="#" class="btn btn-primary">Редактировать</a>  <a href="../phpScripts/delete_vacations.php?id= <?php echo $_GET['id'];?>" class="btn btn-primary">Удалить</a>
+
+</div>
 
 </div>
 
@@ -80,7 +103,3 @@ if(mysqli_num_rows($vac) <= 0)
 </body>
 
     </html>
-<?php ?>
-
-
-

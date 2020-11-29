@@ -44,7 +44,7 @@ include('pages/header.php');
         <a class="btn btn-primary" href="pages/registr.php" role="button">Регистрация</a>
     </div>
     <br><br>
-
+    <hr><p>Можете воспользоваться регистрацией или зайти через Логин: admin Пароль: admin</p>
     <?php
     if ($_SESSION['message'])
     {

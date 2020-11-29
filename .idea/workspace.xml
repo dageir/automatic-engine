@@ -35,12 +35,12 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\OpenServer\domains\site" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\OpenServer\OpenServer\domains\site\uploads" />
       <recent name="C:\OpenServer\OpenServer\domains\site\pages" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\OpenServer\OpenServer\domains\site" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -83,7 +83,7 @@
       <workItem from="1606522728187" duration="1415000" />
       <workItem from="1606524167084" duration="42117000" />
       <workItem from="1606574333411" duration="522000" />
-      <workItem from="1606574868027" duration="846000" />
+      <workItem from="1606574868027" duration="29579000" />
     </task>
     <servers />
   </component>
@@ -115,14 +115,18 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1606521079409" />
-    <state x="1114" y="623" key="NewPhpFileDialog" timestamp="1606567990191">
+    <state x="1114" y="623" key="NewPhpFileDialog" timestamp="1606606922231">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1114" y="623" key="NewPhpFileDialog/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1606567990191" />
-    <state x="1273" y="0" width="1294" height="1407" key="dock-window-1" timestamp="1606544542542">
+    <state x="1114" y="623" key="NewPhpFileDialog/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1606606922231" />
+    <state x="700" y="370" width="2212" height="1250" key="dock-window-1" timestamp="1606602372373">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1273" y="0" width="1294" height="1407" key="dock-window-1/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1606544542542" />
+    <state x="700" y="370" width="2212" height="1250" key="dock-window-1/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1606602372373" />
+    <state x="408" y="111" width="2212" height="1250" key="dock-window-2" timestamp="1606602372373">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="408" y="111" width="2212" height="1250" key="dock-window-2/0.0.2560.1400/2560.0.1920.1040@0.0.2560.1400" timestamp="1606602372373" />
     <state x="226" y="1012" width="672" height="677" key="run.anything.popup" timestamp="1606526887845">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
